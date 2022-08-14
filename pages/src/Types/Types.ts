@@ -11,11 +11,24 @@ export interface ICustomLink {
     href : string
     fontWeight?: string
     color?: string
+    fontSize : string
     handleClick?: (arg : any) => void;
 }
 
 export interface INavbar {
     toggleDrawer : (state?: boolean) => void
+}
+export interface IHeroImage {
+    img : string;
+    full ?: boolean;
+}
+export interface ITripsCarousel {
+    arr : {
+
+        img : string;
+        href : string;
+        title: string;
+    }[]
 }
 export interface IInput {
     multi?: boolean;
@@ -53,16 +66,4 @@ export interface IDrawerItem {
     url : string;
     toggleDrawer : (state?: boolean) => void
 }
-export interface IProjects {
 
-    img : string;
-    title : string;
-    siteUrl : string;
-    repoUrl : string;
-    description : string;
-
-}
-export interface IProjectCard extends IProjects {
-    isReversed?: boolean;
-    className?: string;
-}

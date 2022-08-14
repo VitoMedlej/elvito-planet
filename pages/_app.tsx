@@ -1,36 +1,28 @@
-
 import type {AppProps}
 from 'next/app'
 import Layout from './src/Layout';
 import './Styles/Styles.css'
-
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-
+import CssBaseline from '@mui/material/CssBaseline';
+import {ThemeProvider, createTheme} from '@mui/material/styles';
 
 const theme = createTheme({
     typography: {
-        "fontFamily": `'Montserrat', sans-serif`,
-        "fontSize": 16,
-        
-        allVariants: {
-            color:
-                 '#292929',
+        'fontFamily': `'Montserrat', sans-serif`,
 
-        },
-      
-    },
+        allVariants: {
+            fontFamily: `'Montserrat', sans-serif`,
+            fontSize: 16
+        }
+    }
 });
 
-
-
 function MyApp({Component, pageProps} : AppProps) {
-    return  <Layout desc='' title=''>
-        <ThemeProvider theme={theme}>
-             {/* <CssBaseline/> */}
+    return <ThemeProvider theme={theme}>
+        <Layout desc='' title=''>
 
-        <Component {...pageProps}/>
+            <Component {...pageProps}/>
+        </Layout>
     </ThemeProvider>
-    </Layout>
 }
 
 export default MyApp

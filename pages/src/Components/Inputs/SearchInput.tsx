@@ -9,9 +9,20 @@ export default function SearchInput() {
         <Paper
             component="form"
             sx={{
-          
             display: 'flex',
             alignItems: 'center',
+            background: {
+                xs: 'transparent',
+                sm: 'white'
+            },
+            boxShadow: {
+                xs: 'none',
+                sm: 'auto'
+            },
+            color: {
+                xs: 'white',
+                sm: 'auto'
+            },
             width: {
                 xs: 'min-content',
                 sm: '200px',
@@ -21,6 +32,10 @@ export default function SearchInput() {
             <IconButton
                 type="submit"
                 sx={{
+                color: {
+                    xs: 'white',
+                    sm: '#8e8e8e'
+                },
                 p: {
                     xs: '5px',
                     sm: '10px'

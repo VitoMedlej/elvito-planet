@@ -14,21 +14,31 @@ const Logo = ({toggleDrawer, colorMode, color} : any) => {
             }
         }}
             sx={{
-            width:'106px',
-            position:'absolute',
-            right:'50%',
-            transform:'translateX(50%)',
-            height:'40px',
-            cursor: 'pointer',
+            // width: '106px',
+            // position: 'absolute',
+            // right: '50%',
+            // transform: 'translateX(50%)',
+            flex: 1,
+            width: 'fit-content',
+            textalign: 'center',
+            justifyContent: 'center',
             display: 'flex',
+            height: '41px',
+            cursor: 'pointer',
+       
             alignItems: 'center'
         }}>
 
-            <img
-                className={'logo'}
+            {/* <img
+                className={'full logo'}
                 src="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"
-                alt=""/>
-            <CustomLink color={color} fontWeight='600' text='Medlej' href='/'/>
+                alt=""/> */}
+            <CustomLink
+                fontSize='1.2em'
+                color={'white'}
+                fontWeight='600'
+                text='Vito Medlej'
+                href='/'/>
         </Box>
     )
 }

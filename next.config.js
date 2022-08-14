@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   swcMinify: true,
-  images : {domains:['lp-cms-production.imgix.net']}
+  images : {domains:['images.pexels.com','lonelyplanetstatic.imgix.net','lp-cms-production.imgix.net']}
 }
 
 module.exports = nextConfig

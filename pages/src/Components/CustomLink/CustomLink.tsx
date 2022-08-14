@@ -7,6 +7,7 @@ const CustomLink = ({
     text,
     href,
     handleClick,
+    fontSize,
     color = 'black'
 } : ICustomLink) => {
 
@@ -17,6 +18,7 @@ const CustomLink = ({
                 sx={{
                 cursor: 'pointer',
                 color,
+                fontSize,
                 fontWeight
             }}>
                 {text}
