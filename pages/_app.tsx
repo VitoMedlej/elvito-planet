@@ -1,14 +1,12 @@
 import type {AppProps}
 from 'next/app'
-import Layout from './src/Layout';
-import './Styles/Styles.css'
-import CssBaseline from '@mui/material/CssBaseline';
+import '../Styles/Styles.css'
 import {ThemeProvider, createTheme} from '@mui/material/styles';
+import Layout from '../src/Layout';
 
 const theme = createTheme({
     typography: {
         'fontFamily': `'Montserrat', sans-serif`,
-
         allVariants: {
             fontFamily: `'Montserrat', sans-serif`,
             fontSize: 16

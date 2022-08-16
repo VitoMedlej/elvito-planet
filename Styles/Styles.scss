@@ -43,8 +43,20 @@ body {
 
     }
 }
+.transparentimg {
+    width: 80%;
+    right: 0%;
+    left: 00% !important;
+        object-fit: cover !important;
+
+}
 @media  (min-width: 900px){
     .slide {
         height: 450px !important;
+    }
+}
+@media (min-width : 600px) {
+    .br2 {
+        border-radius: 1em;
     }
 }

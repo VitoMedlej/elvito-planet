@@ -14,7 +14,7 @@ const TripCard = ({img, href, title,full} : any) => {
                 background: 'gray',
                 position: 'relative'
             }}>
-                <Image className={`br1 cover`} layout='fill' priority src={`${img}`}/>
+                <Image className={`br1 img`} layout='fill' priority src={`${img}`}/>
 
             </Box>
             <Link href={href}>{title}</Link>

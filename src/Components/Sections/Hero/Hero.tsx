@@ -15,6 +15,24 @@ const heroImages = [
             '-Melinda-Nagy-shutterstock_256094920-RFC.jpg?auto=format&q=40&ar=16%3A9&fit=crop' +
             '&w=1446'
 ]
+
+export const CustomButton = ({text} : any) => {
+    return <Button
+    variant='contained'
+    sx={{
+    ':hover': {
+        background: 'black',
+        color: 'white'
+    },
+    mt: '.5em',
+    color: 'black',
+    background: 'white'
+}}>
+    <Typography fontWeight='bold' variant='h3' fontSize='.75em'>
+        {text}
+    </Typography>
+</Button>
+}
 const Hero = () => {
     return (
         <Box
@@ -30,7 +48,7 @@ const Hero = () => {
                 width: '100%',
                 display: {
                     xs: 'none',
-                    sm: 'flex'
+                    md: 'flex'
                 },
                 height: '100%',
                 minHeight: '600px'
@@ -46,7 +64,7 @@ const Hero = () => {
                 sx={{
                 display: {
                     xs: 'flex',
-                    sm: 'none'
+                    md: 'none'
                 },
                 height: '100%',
                 minHeight: '560px'
@@ -126,22 +144,8 @@ const Hero = () => {
                     flexDirection: 'column',
                     display: 'flex'
                 }}>
-
-                    <Button
-                        variant='contained'
-                        sx={{
-                        ':hover': {
-                            background: 'black',
-                            color: 'white'
-                        },
-                        mt: '.5em',
-                        color: 'black',
-                        background: 'white'
-                    }}>
-                        <Typography fontWeight='bold' variant='h3' fontSize='.75em'>
-                            Explore
-                        </Typography>
-                    </Button>
+                    <CustomButton text='EXPLORE' />
+                
                     <ArrowDropDownIcon fontSize='large'/>
                 </Box>
 
