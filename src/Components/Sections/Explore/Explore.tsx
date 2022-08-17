@@ -4,16 +4,17 @@ import Image from 'next/image'
 import {CustomButton} from '../Hero/Hero';
 
 interface IBackDrop {
-    br?: string
+    br?: string;
+    zIndex?: string;
 }
-export const BackDrop = ({br} : IBackDrop) => {
+export const BackDrop = ({br, zIndex} : IBackDrop) => {
     return <Box
         sx={{
         position: 'absolute',
         width: '100%',
         height: '100%',
         background: '#00000098',
-        zIndex: '2',
+        zIndex: zIndex || '0',
         top: 0,
         borderRadius: {
             xs: '0',

@@ -9,7 +9,10 @@ const LargeStoryCard = () => {
             sx={{
             position: 'relative',
             width: {
-                xs: '100%'
+                xs: '100%',
+                sm: '90%',
+                md: '75%',
+                lg : '100%'
             },
             margin: '0 auto',
             borderRadius: '1em',
@@ -25,8 +28,9 @@ const LargeStoryCard = () => {
             <BackDrop br={'1em'}/>
             <Box
                 sx={{
+                zIndex:'1',
                 px: '1em',
-                zIndex: '241422',
+                    
                 position: 'absolute',
                 height: '100%',
                 transform: {

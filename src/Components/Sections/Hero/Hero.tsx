@@ -16,22 +16,23 @@ const heroImages = [
             '&w=1446'
 ]
 
-export const CustomButton = ({text} : any) => {
+export const CustomButton = ({text,sx} : any) => {
     return <Button
-    variant='contained'
-    sx={{
-    ':hover': {
-        background: 'black',
-        color: 'white'
-    },
-    mt: '.5em',
-    color: 'black',
-    background: 'white'
-}}>
-    <Typography fontWeight='bold' variant='h3' fontSize='.75em'>
-        {text}
-    </Typography>
-</Button>
+        variant='contained'
+        sx={{
+        ':hover': {
+            background: 'black',
+            color: 'white'
+        },
+        mt: '.5em',
+        color: 'black',
+        background: 'white',
+        ...sx
+    }}>
+        <Typography fontWeight='bold' variant='h3' fontSize='.75em'>
+            {text}
+        </Typography>
+    </Button>
 }
 const Hero = () => {
     return (
@@ -144,8 +145,8 @@ const Hero = () => {
                     flexDirection: 'column',
                     display: 'flex'
                 }}>
-                    <CustomButton text='EXPLORE' />
-                
+                    <CustomButton text='EXPLORE'/>
+
                     <ArrowDropDownIcon fontSize='large'/>
                 </Box>
 

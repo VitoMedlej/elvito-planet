@@ -17,12 +17,22 @@ body {
 .swiper {
     width: 100% !important;
 }
+.swiper-button-next,
+.swiper-button-prev {
+    transform: scale(.8);
+    &:after {
+        color: gray !important;
+    }
+}
 .mySwiper {
     width: 100% !important;
 
 }
 .TripsCardLink {
-    padding-top: .5em;
+    padding-top: 0.5em;
+}
+.brf {
+    border-radius: 50000px;
 }
 .br1 {
     border-radius: 1em;
@@ -31,26 +41,32 @@ body {
     cursor: pointer;
 }
 .cover {
-    object-fit: cover
+    object-fit: cover;
 }
 .slide {
-    height:390px !important;
+    height: 390px !important;
 
-    a { 
-        margin: .5em;
-        color : black;
-        font-size:1.2em;
+    a {
+        margin: 0.5em;
+        color: black;
+        font-size: 1.2em;
 
     }
 }
+.ztop {
+    z-index: 500;
+}
+.z-4 {
+    z-index: -4;
+}
 .transparentimg {
     width: 80%;
-    right: 0%;
-    left: 00% !important;
-        object-fit: cover !important;
+    right: 0;
+    left: 0 !important;
+    object-fit: cover !important;
 
 }
-@media  (min-width: 900px){
+@media (min-width: 900px) {
     .slide {
         height: 450px !important;
     }

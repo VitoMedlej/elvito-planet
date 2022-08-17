@@ -42,7 +42,8 @@ const StoriesExplore = () => {
                 sx={{
                 maxWidth: {
                     lg: '1200px'
-                }
+                },
+                px:{xs:'0',sm:'1em'}
             }}>
 
                 <Grid container>
@@ -50,7 +51,7 @@ const StoriesExplore = () => {
 
                         <LargeStoryCard/>
                     </Grid>
-                    <Grid item xs={12} lg={4}>
+                    <Grid  item xs={12} lg={4}>
                         <StorySlider/>
                     </Grid>
                 </Grid>

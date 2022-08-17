@@ -1,7 +1,6 @@
 import {Box} from '@mui/material';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from "swiper";
-
 import {ITripsCarousel} from '../../../Types/Types';
 import TripCard from '../../Cards/TripCard';
 
