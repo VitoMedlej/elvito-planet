@@ -7,7 +7,7 @@ const StorySlideCard = () => {
         <Box sx={{
             maxWidth:'350px',
             width: {xs:'100%',lg:'300px'},
-            margin: {xs:'0 auto',sm:'1em  auto 0'},
+            margin: {xs:'1em auto 0',md:'0 auto'},
           
         }}>
             <Box>

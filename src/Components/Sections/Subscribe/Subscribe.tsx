@@ -53,9 +53,7 @@ const Subscribe = () => {
                         Subscribe And Get 20% off
                     </Typography>
                     <Typography>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum accusamus
-                        nesciunt sunt tenetur, est suscipit consequatur distinctio laudantium error
-                        sequi. Ex sint ut enim earum?
+                    Join our newsletter and discover new destinations to inspire the traveler within. Plus, get 20% off at our online shop. Every week you’ll receive expert advice, tips, exclusive offers, and much more.
                     </Typography>
 
                 </Box>
@@ -86,7 +84,7 @@ const Subscribe = () => {
                             mx: '.5em',
                             padding: '.80em'
                         }}
-                            text='EXPLORE'/>
+                            text='Subscribe'/>
                     </Box>
                 </Box>
             </Box>

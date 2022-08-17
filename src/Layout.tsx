@@ -45,9 +45,7 @@ const Layout = ({title, children, desc} : ILayout) => {
 
             </Head>
             <Navbar/> {/* <CustomDrawer isOpen={isOpen} toggleDrawer={toggleDrawer}/> */}
-            <>
-                {children}
-            </>
+            <> {children} </>
             <Footer/>
         </div>
     )
