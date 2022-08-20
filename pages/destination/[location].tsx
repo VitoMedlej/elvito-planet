@@ -205,7 +205,7 @@ const Index = ({destinationData}:any) => {
                     },
                     py: '.45em'
                 }}>
-                    Story From {data.title}
+                    Story From {data.titlesg}
 
                 </Typography>
                 <LargeStoryCard
