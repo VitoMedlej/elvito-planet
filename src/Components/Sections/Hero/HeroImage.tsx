@@ -5,13 +5,14 @@ import {IHeroImage} from '../../../Types/Types';
 const HeroImage = ({img, full} : IHeroImage) => {
     return (
         <Box
+        className='relative'
             sx={{
             width: full
                 ? '100%'
                 : '33.33333%',
             height: '100%',
             pointerEvents:'none',
-            position: 'relative'
+  
         }}>
             <Box
                 sx={{

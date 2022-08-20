@@ -7,10 +7,11 @@ import StorySlider from './StorySlider';
 const StoriesExplore = () => {
     return (
         <Box
+        className='relative'
             sx={{
             display: 'flex',
             flexDirection: 'column',
-            position: 'relative',
+      
             mt: {
                 xs: '5.5em',
                 sm: '6.5em'

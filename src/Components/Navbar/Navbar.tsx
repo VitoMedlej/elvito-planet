@@ -14,6 +14,7 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import Logo from '../Logo/Logo';
 import SearchInput from '../Inputs/SearchInput';
+import DDMenu from '../Menu/DDMenu';
 export const Links = [
     {
         text: 'Home',
@@ -53,12 +54,12 @@ const Navbar = ({toggleDrawer} : any) => {
         }}
             position="static">
             <Container
+                className='relative'
                 sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                margin: '0 auto',
-                position: 'relative'
+                margin: '0 auto'
             }}
                 maxWidth="lg">
                 <SearchInput/>
@@ -101,11 +102,14 @@ const Navbar = ({toggleDrawer} : any) => {
                             Destinations
                         </Typography>
                     </IconButton>
+                    {/* <DDMenu/>c */}
                     <Button
                         variant='contained'
                         sx={{
-                        ':hover':{background:'black',color:'white'},
-
+                        ':hover': {
+                            background: 'black',
+                            color: 'white'
+                        },
                         color: 'black',
                         background: 'white'
                     }}>

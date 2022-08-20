@@ -12,8 +12,10 @@ const StorySlideCard = () => {
         }}>
             <Box>
                 <Box
+        className='relative'
+
                     sx={{
-                    position: 'relative',
+                 
                     width: '100%',
                     minWidth:'280px',
                     height: '180px',

@@ -35,6 +35,7 @@ const Explore = () => {
         }}>
 
             <Box
+                  className='relative'
                 sx={{
                 width: '100%',
                 minHeight: {
@@ -46,7 +47,7 @@ const Explore = () => {
                     xs: '300px',
                     lg: '100vh'
                 },
-                position: 'relative'
+              
             }}>
                 <Box
                     sx={{
@@ -91,8 +92,9 @@ const Explore = () => {
                     layout='fill'
                     src={`https://lonelyplanetstatic.imgix.net/marketing/2022/homepage/bit_bg.jpg?fit=crop&q=72&auto=format&w=1247&h=929&dpr=1`}/>
                 <Box
+                      className='relative'
                     sx={{
-                    position: 'relative',
+                 
                     width: '100%',
                     height: '100%',
                     margin: '0 auto',

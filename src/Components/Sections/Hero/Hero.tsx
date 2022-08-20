@@ -37,10 +37,11 @@ export const CustomButton = ({text,sx} : any) => {
 const Hero = () => {
     return (
         <Box
+        className='relative'
             sx={{
             display: 'flex',
             flexDirection: 'column',
-            position: 'relative',
+   
             height: '100vh'
         }}>
 

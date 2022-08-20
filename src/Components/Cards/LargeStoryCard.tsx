@@ -3,12 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {BackDrop} from '../Sections/Explore/Explore';
 
-const LargeStoryCard = () => {
+interface ILargeStoryCard {
+    sx ?: any;
+    wfull ?: boolean
+}
+const LargeStoryCard = ({sx, wfull} : ILargeStoryCard) => {
     return (
         <Box
+        className='relative'
             sx={{
-            position: 'relative',
-            width: {
+         
+            width: wfull ? {xs:'100%'} : {
                 xs: '100%',
                 sm: '90%',
                 md: '75%',
@@ -19,7 +24,8 @@ const LargeStoryCard = () => {
             height: {
                 xs: '400px',
                 sm: '500px'
-            }
+            },
+            ...sx
         }}>
             <Image
                 className='img br2'
