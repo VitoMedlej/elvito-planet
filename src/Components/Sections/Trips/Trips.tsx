@@ -9,15 +9,14 @@ export const TripsArray = [
                 '_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1',
         href: '/destination/seattle'
     }, {
-        title: 'china',
-        img: 'https://images.pexels.com/photos/2539395/pexels-photo-2539395.jpeg?auto=compress' +
-                '&cs=tinysrgb&w=1260&h=750&dpr=1',
-        href: '/destination/china'
+        title: 'Czech Republic',
+        img: 'https://res.cloudinary.com/dwcu3wcol/image/upload/v1661064667/pexels-photo-3544480_1_1_fclszt.jpg',
+        href: '/destination/czech'
     },
     {
-        title :'London',
-        href : '/destination/london',
-        img :`https://lp-cms-production.imgix.net/2021-10/Young%20happy%20smiling%20man%20in%20glasses%20on%20the%20streets%20of%20London,%20UK%20%20Alexander%20Spatari%20GettyImages-904153354%20rfc.jpg?fit=crop&q=60&auto=format&w=1247&h=566&dpr=1`
+        title :'Lebanon',
+        href : '/destination/lebanon',
+        img :`https://res.cloudinary.com/dwcu3wcol/image/upload/v1661064913/pexels-photo-6462611_1_1_iuvwkn.jpg`
     }
 ]
 

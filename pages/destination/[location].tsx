@@ -2,15 +2,8 @@ import {Box, Container, Typography} from '@mui/material';
 import Image from 'next/image';
 import LargeStoryCard from '../../src/Components/Cards/LargeStoryCard';
 
-const imgsArr = [
-    'https://res.cloudinary.com/dwcu3wcol/image/upload/v1660733920/pexels-photo-33651' +
-            '2_cjo1b6.jpg',
-    'https://res.cloudinary.com/dwcu3wcol/image/upload/v1660733920/pexels-photo-39644' +
-            '06_kuqsme.jpg',
-    ''
-]
+
 const Index = ({destinationData}:any) => {
-    console.log('destinationData: ', destinationData);
     let {items } = destinationData?.destinationCollection
     let data = items[0]
    
@@ -29,7 +22,7 @@ const Index = ({destinationData}:any) => {
                 <Image
                     className='img'
                     layout='fill'
-                    src={`https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1`}/>
+                    src={` ${ data.bgImage || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}`}/>
             </Box>
             <Box
                 sx={{
@@ -205,7 +198,7 @@ const Index = ({destinationData}:any) => {
                     },
                     py: '.45em'
                 }}>
-                    Story From {data.titlesg}
+                    Story From {data.title}
 
                 </Typography>
                 <LargeStoryCard
@@ -255,6 +248,7 @@ export const getServerSideProps = async(context :any) => {
                           info
                           mapLocation
                           images
+                          bgImage
                         }
                           }
                     

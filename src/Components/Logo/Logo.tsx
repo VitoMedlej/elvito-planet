@@ -8,10 +8,10 @@ const Logo = ({toggleDrawer, colorMode, color} : any) => {
     return (
         <Box
             onClick={() => {
-            toggleDrawer(false);
-            if (router.pathname !== '/') {
+            // toggleDrawer(false);
+            // if (router.pathname !== '/') {
                 router.push('/');
-            }
+            // }
         }}
             sx={{
             // width: '106px',

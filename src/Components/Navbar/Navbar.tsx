@@ -14,7 +14,8 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import Logo from '../Logo/Logo';
 import SearchInput from '../Inputs/SearchInput';
-import DDMenu from '../Menu/DDMenu';
+
+
 export const Links = [
     {
         text: 'Home',
@@ -95,14 +96,14 @@ const Navbar = ({toggleDrawer} : any) => {
                             Stories
                         </Typography>
                     </IconButton>
-                    <IconButton sx={{
+                    {/* <IconButton sx={{
                         color: 'white'
                     }}>
                         <Typography fontWeight='bold' variant='h3' fontSize='.65em'>
                             Destinations
                         </Typography>
-                    </IconButton>
-                    {/* <DDMenu/>c */}
+                    </IconButton> */}
+                    <Dropdown/>
                     <Button
                         variant='contained'
                         sx={{
