@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Seattle",
+        "img": "https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1",
+        "href": "/destination/seattle"
+    }, {
+        "title": "Czech Republic",
+        "img": "https://res.cloudinary.com/dwcu3wcol/image/upload/v1661064667/pexels-photo-3544480_1_1_fclszt.jpg",
+        "href" : "/destination/czech"
+    },
+    {
+        "title" :"Lebanon",
+        "href" : "/destination/lebanon",
+        "img" : "https://res.cloudinary.com/dwcu3wcol/image/upload/v1661064913/pexels-photo-6462611_1_1_iuvwkn.jpg"
+    }
+]
