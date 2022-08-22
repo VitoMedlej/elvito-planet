@@ -15,7 +15,8 @@ import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact
 import Logo from '../Logo/Logo';
 import SearchInput from '../Inputs/SearchInput';
 import Dropdown from '../Menu/Dropdown';
-
+import TripsArray from '../../../static.json'
+import Link from 'next/link';
 
 export const Links = [
     {
@@ -90,21 +91,10 @@ const Navbar = ({toggleDrawer} : any) => {
                         md: 'flex'
                     }
                 }}>
-                    <IconButton sx={{
-                        color: 'white'
-                    }}>
-                        <Typography fontWeight='bold' variant='h3' fontSize='.65em'>
-                            Stories
-                        </Typography>
-                    </IconButton>
-                    {/* <IconButton sx={{
-                        color: 'white'
-                    }}>
-                        <Typography fontWeight='bold' variant='h3' fontSize='.65em'>
-                            Destinations
-                        </Typography>
-                    </IconButton> */}
-                    <Dropdown/>
+                      <Dropdown title='Stories' itemsArray={TripsArray}/>
+                
+                    <Dropdown title='Destinations' itemsArray={TripsArray}/>
+                    <Link href='/#subscribe'>
                     <Button
                         variant='contained'
                         sx={{
@@ -119,6 +109,8 @@ const Navbar = ({toggleDrawer} : any) => {
                             Subscribe
                         </Typography>
                     </Button>
+                    </Link>
+
                 </Box>
 
             </Container>

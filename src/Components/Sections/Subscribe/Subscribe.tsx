@@ -9,6 +9,7 @@ const Subscribe = () => {
     return (
 <>
         <Box
+        id='subscribe'
               className='relative'
         sx={{
         mt: '12em',
