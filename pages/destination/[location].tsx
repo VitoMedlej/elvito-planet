@@ -1,8 +1,12 @@
 import {Box, Container, Typography} from '@mui/material';
 import Image from 'next/image';
 import LargeStoryCard from '../../src/Components/Cards/LargeStoryCard';
+import React from 'react';
 
 
+
+
+const OtherComponent = React.lazy(() => import('../../src/Components/Map/Map'));
 const Index = ({destinationData}:any) => {
     let {items } = destinationData?.destinationCollection
     let data = items[0]
@@ -22,6 +26,7 @@ const Index = ({destinationData}:any) => {
                 <Image
                     className='img'
                     layout='fill'
+                    priority 
                     src={` ${ data.bgImage || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}`}/>
             </Box>
             <Box
@@ -169,21 +174,8 @@ const Index = ({destinationData}:any) => {
 
                 </Typography>
 
-                <div className="mapouter">
-                    <div className="gmap_canvas">
-                        <iframe
-                            width="100%"
-                            height="500"
-                            id="gmap_canvas"
-                            src={data.mapLocation || "https://maps.google.com/maps?q=seattle&t=&z=13&ie=UTF8&iwloc=&output=embed"}
-                            frame-border="0"
-                            scrolling="no"
-                            margin-height="0"
-                            margin-width="0"></iframe>
-                        <a href="https://putlocker-is.org"></a>
 
-                    </div>
-                </div>
+<OtherComponent location={data?.mapLocation}/>               
 
             </Container>
             <Container maxWidth='lg' sx={{
@@ -201,12 +193,15 @@ const Index = ({destinationData}:any) => {
                     Story From {data.title}
 
                 </Typography>
+
                 <LargeStoryCard
                     wfull={true}
                     sx={{
                     mt: '.45em'
                 }}/>
-            </Container>
+                </Container>
+
+       
             </>
             }
         </Box>
@@ -221,12 +216,13 @@ export const getServerSideProps = async(context :any) => {
       }
     try {
         const location = capitalizeFirstLetter(context.query.location) || null
-        console.log('location: ', location);
         
         // const destination = router
         // first, grab our Contentful keys from the .env file
         const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
         const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+      
+
         //https://graphql.contentful.com/content/v1/spaces/vqg697sliq4v/environments/master&?access_token=Jgc89barwNDyqR001RC1H69TVijhbc8x1dW-GWfhtKQ then, send a
         // request to Contentful (using the same URL from GraphiQL)
         const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}`, {
@@ -263,11 +259,9 @@ export const getServerSideProps = async(context :any) => {
 
         // grab the data from our response
         const {data} = await res.json()
-        console.log('await res.json(): ',  data);
       
         
         if (!data || data?.destinationCollection?.items.length < 1) {
-            console.log('data: ', data);
          return {
             redirect: {
                 destination: '/',
@@ -275,12 +269,13 @@ export const getServerSideProps = async(context :any) => {
               }
          }
         }
-
         return {
             props: {
-                destinationData:  JSON.parse(JSON.stringify(data))  
-            }
+                destinationData :    JSON.parse(JSON.stringify(data))  
+    }
         }
+        
+
     } catch (err) {
         console.log('err: ', err);
         return {
