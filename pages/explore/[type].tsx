@@ -14,8 +14,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
 import {useEffect} from 'react';
 import SmallStoryCard from '../../src/Components/Cards/SmallStoryCard';
+import {getServers} from 'dns';
+import {GetContentfullData} from '../../src/Functions/GetContentfullData';
 
-const Index = () => {
+const Index = ({data} : any) => {
+    
     const router = useRouter()
     const {type} = router.query;
 
@@ -162,8 +165,13 @@ const Index = () => {
 
                     </Box>}
 
-                    {type === 'stories' && <Box>
-                        {/* <SmallStoryCard/> */}
+                    {type === 'stories' && data[0] &&  <Box>
+                        <SmallStoryCard
+                            bgImage={data[0].bgImage}
+                            title={data[0].title}
+                            shortDescription={data[0].shortDescription}
+                            readTime={1}
+                            date={data[0].postedAt}/>
                     </Box>
 }
 
@@ -175,3 +183,44 @@ const Index = () => {
 }
 
 export default Index
+
+export const getServerSideProps = async() => {
+    try {
+        const data = await GetContentfullData(`
+            query  {
+                storyCollection {
+                  items {
+                    title
+                    shortDescription
+                    postedAt
+                    bgImage
+                    
+                  }
+                }
+              }
+            `)
+        if (!data || !data
+            ?.storyCollection
+                ?.items) 
+            throw 'Error no data'
+
+        return {
+            props: {
+                data: data.storyCollection.items
+            }
+        }
+
+    } catch (err) {
+        console.log('err: ', err);
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false
+            }
+        }
+    }
+}
+// description
+                    // section {
+                    //   json
+                    // }

@@ -68,8 +68,9 @@ export interface IDrawerItem {
 }
 
 export interface ISmallStoryCard {
-    title : string,
-    text : string,
+    title : string;
+    bgImage : string;
+    shortDescription : string,
     date : string,
     readTime : number | number
 }

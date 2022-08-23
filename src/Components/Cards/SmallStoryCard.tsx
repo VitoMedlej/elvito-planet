@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {ISmallStoryCard} from '../../Types/Types';
 
-const SmallStoryCard = ({title, text, date, readTime} : ISmallStoryCard) => {
+const SmallStoryCard = ({title, shortDescription, date, bgImage, readTime} : ISmallStoryCard) => {
     return (
         <Box sx={{
             display: 'flex',
@@ -13,13 +13,21 @@ const SmallStoryCard = ({title, text, date, readTime} : ISmallStoryCard) => {
             <Box
                 sx={{
                 position: 'relative',
-                width: '150px',
-                height: '180px'
+                width: {
+                    xs: '120px',
+                    sm: '150px',
+                    md: '190px'
+                },
+                height: {
+                    xs: '150px',
+                    sm: '180px'
+                }
             }}>
                 <Image
                     className="img br1"
                     layout='fill'
-                    src='https://res.cloudinary.com/dwcu3wcol/image/upload/v1660988199/pexels-photo-4863968_pjkfbj.jpg'></Image>
+                    src={bgImage || 'https://res.cloudinary.com/dwcu3wcol/image/upload/v1660988199/pexels-photo-48639' +
+                    '68_pjkfbj.jpg'}></Image>
             </Box>
             <Box
                 sx={{
@@ -31,21 +39,35 @@ const SmallStoryCard = ({title, text, date, readTime} : ISmallStoryCard) => {
                     <Typography
                         className='cursor'
                         fontWeight='600'
-                        fontSize='1.2em'
+                        sx={{
+                        fontSize: {
+                            xs: '.9em',
+                            sm: '1em',
+                            md: '1.2em'
+                        }
+                    }}
                         color='#0057d9'>
                         {title}
                     </Typography>
                 </Link>
 
-                <Typography fontWeight='400' fontSize='.85em' color='#505050'>{readTime} min read - {date}
+                <Typography fontWeight='400' fontSize='.85em' color='#505050'>{readTime}
+                    min read - {date}
                 </Typography>
                 <Typography
                     sx={{
-                    pt: '.35em'
+                    pt: '.35em',
+                    display: {
+                        xs: 'none',
+                        sm: 'block'
+                    },
+                    fontSize: {
+                        sm: '9em',
+                        md: '1.1em'
+                    }
                 }}
                     fontWeight='500'
-                    fontSize='1.1em'
-                    color='#000000'>South Korea might {text}</Typography>
+                    color='#222222'>South Korea might {shortDescription}</Typography>
 
             </Box>
         </Box>
