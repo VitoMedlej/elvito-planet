@@ -1,18 +1,22 @@
 import {Box, Container, Typography} from '@mui/material';
 import Image from 'next/image';
 import LargeStoryCard from '../../src/Components/Cards/LargeStoryCard';
-import React from 'react';
+import React, { Suspense } from 'react';
+import Layout from '../../src/Layout';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
 
-const OtherComponent = React.lazy(() => import('../../src/Components/Map/Map'));
+// const OtherComponent = React.lazy(() => import('../../src/Components/Map/Map'));
 const Index = ({destinationData}:any) => {
-    let {items } = destinationData?.destinationCollection
+    let {items} = destinationData?.destinationCollection
     let data = items[0]
    
    
     return (
+        <Layout title={`Visit ${data.title} - Elvito Planet `} desc={`${data.title}&apos;s best sights and local secrets from travel experts you can trust`}>
+
         <Box>
             <Box
                 className='relative'
@@ -43,7 +47,7 @@ const Index = ({destinationData}:any) => {
                     sm: '80%'
                 },
                 height: '100%',
-                transform: 'translateY(-10%)',
+                transform: {xs:'translateY(-2%)',sm:'translateY(-10%)'},
                 background: 'white',
                 py: '2em',
                 px: '1em'
@@ -117,7 +121,7 @@ const Index = ({destinationData}:any) => {
                     height: '100%',
                     minHeight: '300px'
                 }}>
-                    <Image layout='fill' className='img' src={data.images[0]}/>
+                    <Image layout='fill' className='img' src={data.images[0] || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}/>
                 </Box>
                 <Box
                     className='relative'
@@ -126,7 +130,7 @@ const Index = ({destinationData}:any) => {
                     height: '100%',
                     minHeight: '300px'
                 }}>
-                    <Image layout='fill' className='img' src={data.images[1]}/>
+                    <Image layout='fill' className='img' src={data.images[1] || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}/>
                 </Box>
             </Container>
             <Container
@@ -145,7 +149,7 @@ const Index = ({destinationData}:any) => {
                     height: '100%',
                     minHeight: '300px'
                 }}>
-                    <Image layout='fill' className='img' src={data.images[2]}/>
+                    <Image layout='fill' className='img' src={data.images[2] || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}/>
                 </Box>
                 <Box
                     className='relative'
@@ -154,7 +158,7 @@ const Index = ({destinationData}:any) => {
                     height: '100%',
                     minHeight: '300px'
                 }}>
-                    <Image layout='fill' className='img' src={data.images[3]}/>
+                    <Image layout='fill' className='img' src={`${data?.images[3] || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}`}/>
                 </Box>
             </Container>
 
@@ -175,7 +179,10 @@ const Index = ({destinationData}:any) => {
                 </Typography>
 
 
+
+                {/* <Suspense fallback={<CircularProgress />}>
 <OtherComponent location={data?.mapLocation}/>               
+</Suspense> */}
 
             </Container>
             <Container maxWidth='lg' sx={{
@@ -205,6 +212,8 @@ const Index = ({destinationData}:any) => {
             </>
             }
         </Box>
+        </Layout>
+
     )
 }
 

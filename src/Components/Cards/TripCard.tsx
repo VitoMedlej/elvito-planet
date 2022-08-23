@@ -3,7 +3,12 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useRouter } from 'next/router';
 
-const TripCard = ({img, href, title,full} : any) => {
+const TripCard = ({img, href, title,full} : {
+    img : string,
+    href:string,
+    title:string,
+    full?:boolean
+}) => {
     const router = useRouter()
     return (
 

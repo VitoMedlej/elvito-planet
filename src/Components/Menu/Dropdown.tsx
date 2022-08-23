@@ -89,7 +89,10 @@ function Dropdown({title, itemsArray} : {
                 })}
 
                 <Button
-                onClick={()=>router.push(`/explore/${title.toLocaleLowerCase()}`)}
+                    onClick={() => {
+                    handleClose();
+                    router.push(`/explore/${title.toLocaleLowerCase()}`)
+                }}
                     sx={{
                     width: '100%',
                     ':hover': {
