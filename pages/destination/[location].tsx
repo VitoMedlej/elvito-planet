@@ -4,7 +4,7 @@ import LargeStoryCard from '../../src/Components/Cards/LargeStoryCard';
 import React, { Suspense } from 'react';
 import Layout from '../../src/Layout';
 import CircularProgress from '@mui/material/CircularProgress';
-
+import Map from '../../src/Components/Map/Map';
 
 
 
@@ -105,7 +105,7 @@ const Index = ({destinationData}:any) => {
        
          {
             data?.images && 
-           <>
+           <div>
          
       
             <Container
@@ -180,9 +180,9 @@ const Index = ({destinationData}:any) => {
 
 
 
-                {/* <Suspense fallback={<CircularProgress />}>
-<OtherComponent location={data?.mapLocation}/>               
-</Suspense> */}
+                <Suspense fallback={<CircularProgress />}>
+<Map location={data?.mapLocation}/>               
+</Suspense>
 
             </Container>
             <Container maxWidth='lg' sx={{
@@ -209,7 +209,7 @@ const Index = ({destinationData}:any) => {
                 </Container>
 
        
-            </>
+            </div>
             }
         </Box>
         </Layout>
@@ -295,18 +295,4 @@ export const getServerSideProps = async(context :any) => {
         }
     }
 }
-
-// {
-//     destinationCollection{
-//         items {
-//           title
-//           description
-//           info
-//           mapLocation
-//           images
-//         }
-//           }
-    
-//     }
-
 

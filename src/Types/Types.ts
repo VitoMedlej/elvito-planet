@@ -20,13 +20,13 @@ export interface INavbar {
 }
 export interface IHeroImage {
     img : string;
-    full ?: boolean;
+    full?: boolean;
 }
 export interface ITripsCarousel {
     arr : {
 
-        img : string;
-        href : string;
+        img: string;
+        href: string;
         title: string;
     }[]
 }
@@ -49,7 +49,7 @@ export interface ICustomDrawer extends INavbar {
 export interface IToolCard {
     title : string;
     svg : string;
-    className ?: string;
+    className?: string;
     filter?: boolean
 }
 export interface ISocialMedia extends IToolCard {
@@ -67,3 +67,9 @@ export interface IDrawerItem {
     toggleDrawer : (state?: boolean) => void
 }
 
+export interface ISmallStoryCard {
+    title : string,
+    text : string,
+    date : string,
+    readTime : number | number
+}

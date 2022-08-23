@@ -11,11 +11,23 @@ import Image from 'next/image'
 import {useRouter} from 'next/router';
 import TripsArray from '../../static.json'
 import SearchIcon from '@mui/icons-material/Search';
+import Link from 'next/link';
+import {useEffect} from 'react';
+import SmallStoryCard from '../../src/Components/Cards/SmallStoryCard';
 
 const Index = () => {
     const router = useRouter()
-    const {type} = router.query
+    const {type} = router.query;
 
+    useEffect(() => {
+        setTimeout(() => {
+
+            if (type && type !== 'stories' && type !== 'destinations') {
+                router.push('/')
+            }
+        }, 50)
+
+    }, [])
     return (
         <div>
 
@@ -117,7 +129,7 @@ const Index = () => {
                     height: '100%'
                 }}>
 
-                    <Box
+                    {type === 'destinations' && <Box
                         sx={{
                         mt: '2em',
                         width: '100%',
@@ -132,10 +144,10 @@ const Index = () => {
                                 sx={{
                                 mt: '1em',
                                 height: '250px !important',
-                                maxWidth: '300px',
+                                maxWidth: '350px',
                                 width: {
                                     xs: '100%',
-                                    sm: '31%'
+                                    sm: '44%'
                                 }
                             }}
                                 className=' cursor'>
@@ -148,7 +160,13 @@ const Index = () => {
                             </Box>
                         })}
 
+                    </Box>}
+
+                    {type === 'stories' && <Box>
+                        {/* <SmallStoryCard/> */}
                     </Box>
+}
+
                 </Box>
             </Container>
         </div>
