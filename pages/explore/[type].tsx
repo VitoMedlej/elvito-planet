@@ -18,6 +18,14 @@ import {getServers} from 'dns';
 import {GetContentfullData} from '../../src/Functions/GetContentfullData';
 import Layout from '../../src/Layout';
 
+export interface IStory {
+    title: string;
+    bgImage: string;
+    shortDescription: string;
+    postedAt: string
+
+}
+
 const Index = ({data} : any) => {
 
     const router = useRouter()
@@ -167,12 +175,7 @@ const Index = ({data} : any) => {
 
                     </Box>}
 
-                    {type === 'stories' && data && data.map((story : {
-                        title: string,
-                        bgImage: string;
-                        shortDescription: string;
-                        postedAt: string
-                    }) => {
+                    {type === 'stories' && data && data.map((story :IStory ) => {
 
                         return <SmallStoryCard
                             key={story.title}
@@ -196,7 +199,7 @@ const Index = ({data} : any) => {
 
 export default Index
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
     try {
         const data = await GetContentfullData(`
             query  {
