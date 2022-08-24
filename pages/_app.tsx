@@ -14,13 +14,10 @@ const theme = createTheme({
     }
 });
 
-
 function MyApp({Component, pageProps} : AppProps) {
     return <ThemeProvider theme={theme}>
-        <Layout desc='' title=''>
 
-            <Component {...pageProps}/>
-        </Layout>
+        <Component {...pageProps}/>
     </ThemeProvider>
 }
 
