@@ -3,10 +3,18 @@ import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import {ISmallStoryCard} from '../../Types/Types';
+import {useRouter} from 'next/router';
 
 const SmallStoryCard = ({title, shortDescription, date, bgImage, readTime} : ISmallStoryCard) => {
+    const slug = title
+        .toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/[^\w-]+/g, '');
+    const router = useRouter();
     return (
-        <Box sx={{
+        <Box
+            onClick={() => router.push(`/story/${slug}`)}
+            sx={{
             display: 'flex',
             my: '1em'
         }}>

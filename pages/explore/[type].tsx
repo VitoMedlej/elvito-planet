@@ -16,9 +16,10 @@ import {useEffect} from 'react';
 import SmallStoryCard from '../../src/Components/Cards/SmallStoryCard';
 import {getServers} from 'dns';
 import {GetContentfullData} from '../../src/Functions/GetContentfullData';
+import Layout from '../../src/Layout';
 
 const Index = ({data} : any) => {
-    
+
     const router = useRouter()
     const {type} = router.query;
 
@@ -32,7 +33,8 @@ const Index = ({data} : any) => {
 
     }, [])
     return (
-        <div>
+        <Layout title={`Explore and see ${type} from all over the world | Elvito Planet `} desc=''>
+<div>
 
             <Box
                 sx={{
@@ -165,19 +167,29 @@ const Index = ({data} : any) => {
 
                     </Box>}
 
-                    {type === 'stories' && data[0] &&  <Box>
-                        <SmallStoryCard
-                            bgImage={data[0].bgImage}
-                            title={data[0].title}
-                            shortDescription={data[0].shortDescription}
+                    {type === 'stories' && data && data.map((story : {
+                        title: string,
+                        bgImage: string;
+                        shortDescription: string;
+                        postedAt: string
+                    }) => {
+
+                        return <SmallStoryCard
+                            key={story.title}
+                            bgImage={story.bgImage}
+                            title={story.title}
+                            shortDescription={story.shortDescription}
                             readTime={1}
-                            date={data[0].postedAt}/>
-                    </Box>
+                            date={story.postedAt}/>
+
+                    })
 }
 
                 </Box>
             </Container>
-        </div>
+</div>
+
+        </Layout>
 
     )
 }
@@ -220,7 +232,4 @@ export const getServerSideProps = async() => {
         }
     }
 }
-// description
-                    // section {
-                    //   json
-                    // }
+// description section {   json }
