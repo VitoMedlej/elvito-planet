@@ -18,30 +18,23 @@ import Dropdown from '../Menu/Dropdown';
 import TripsArray from '../../../static.json'
 import Link from 'next/link';
 
-export const Links = [
-    {
-        text: 'Home',
-        Icon: HomeIcon,
-        url: '/'
-    }, {
-        text: 'Contact',
-        Icon: ConnectWithoutContactIcon,
-        url: '/contact'
-    }, {
-        text: 'Projects',
-        Icon: AssignmentTurnedInIcon,
-        url: '/'
-    }, {
-        text: 'Theme',
-        Icon: DarkModeIcon,
-        url: '/',
-        isToggleTheme: true
-    }
-]
 
-const Navbar = ({toggleDrawer} : any) => {
-    // const colorMode = useContext(ColorModeContext) const color = colorMode.mode
-    // === 'light'     ? 'black'     : 'white'
+export const storiesArray = [{
+    title: 'Argetina',
+    href : '/story/N23zI8f3GNXwSeE/the-best-beaches-in-argentina-for-sand-splashing-and-scenery'
+},{
+    title: 'Australia',
+    href:'/story/dO289glek1WnlB1/start-saving-to-experience-one-of-these-incredible-safari-stays-in-australia'
+},
+
+{
+    title : 'South Korea',
+    href : '/story/GMcmKPl7AAeUHcq/hit-the-trails-on-these-top-hikes-in-south-korea'
+
+}
+    ]
+const Navbar = ({setOpen,isOpen, color} : any) => {
+
     return (
         <AppBar
             sx={{
@@ -52,7 +45,7 @@ const Navbar = ({toggleDrawer} : any) => {
                 md: '3em'
             },
             zIndex: 555556,
-            position: 'fixed',
+            position: 'absolute',
             background: 'transparent'
         }}
             position="static">
@@ -66,9 +59,10 @@ const Navbar = ({toggleDrawer} : any) => {
             }}
                 maxWidth="lg">
                 <SearchInput/>
-                <Logo toggleDrawer={toggleDrawer} colorMode={'colorMode'}/>
+                <Logo  colorMode={'colorMode'}/>
 
                 <IconButton
+                onClick={() =>setOpen(true)}
                     sx={{
                     color: 'white',
                     display: {
@@ -91,9 +85,9 @@ const Navbar = ({toggleDrawer} : any) => {
                         md: 'flex'
                     }
                 }}>
-                      <Dropdown title='Stories' itemsArray={TripsArray}/>
+                      <Dropdown title='Stories' color={color} itemsArray={storiesArray}/>
                 
-                    <Dropdown title='Destinations' itemsArray={TripsArray}/>
+                    <Dropdown title='Destinations' color={color} itemsArray={TripsArray}/>
                     <Link href='/#subscribe'>
                     <Button
                         variant='contained'

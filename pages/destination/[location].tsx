@@ -235,6 +235,7 @@ const Index = ({destinationData} : any) => {
                             </Typography>
 
                             <LargeStoryCard
+                                story={data}
                                 wfull={true}
                                 sx={{
                                 mt: '.45em'
@@ -292,7 +293,7 @@ export const getServerSideProps = async(context : any) => {
         }
 
     } catch (err) {
-        console.log('err: ', err);
+        console.log('err 1: ', err);
         return {
             redirect: {
                 destination: '/',
@@ -301,4 +302,3 @@ export const getServerSideProps = async(context : any) => {
         }
     }
 }
-

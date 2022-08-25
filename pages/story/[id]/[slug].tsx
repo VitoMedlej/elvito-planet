@@ -1,17 +1,22 @@
 import {Box, Breadcrumbs, Container, Link, Typography} from "@mui/material"
 import {useRouter} from "next/router"
-import Layout from "../../src/Layout"
+import Layout from "../../../src/Layout"
 import Image from 'next/image'
-import {GetContentfullData} from "../../src/Functions/GetContentfullData"
-const Index = ({data} : any) => {
-    let story = data[0]
+import {GetContentfullData} from "../../../src/Functions/GetContentfullData"
+import StoriesExplore from "../../../src/Components/Sections/StoriesExplore/StoriesExplore";
+import ProgressBar from 'react-progressbar-on-scroll';
+import { IStory } from "../../../src/Types/Types"
 
-    const router = useRouter()
-    const {slug} = router.query;
+const Index = ({data} : any) => {
+    let story :IStory = data[0]
+    
+ 
+
 
     return (
-        <Layout title={`${slug} | Elvito Planet `} desc=''>
-
+        <Layout color='black' title={`${story.title} | Elvito Planet `} desc={story.shortDescription + '| ELvito Planet'}>
+<>
+<ProgressBar color='#0057d9' />
             <Box
                 sx={{
                 height: '100%',
@@ -29,7 +34,7 @@ const Index = ({data} : any) => {
                             <Link underline="hover" color="inherit" href="/explore/stories">
                                 Stories
                             </Link>
-                            <Typography color="text.primary">Breadcrumbs</Typography>
+                            <Typography color="text.primary">{story.id}</Typography>
                         </Breadcrumbs>
                         <Typography
                             sx={{
@@ -85,14 +90,18 @@ const Index = ({data} : any) => {
                             </Typography>
 
                      {    
-                     story.section && story?.section?.json?.content &&
+                     story.section && story.section?.json?.content &&
 
-                     story?.section?.json?.content.map((part: any,index : number) => {
+                     story.section.json.content.map(({content,nodeType}: any,index:number) => {
+                    
 
                    
-                   return  <>
+                         
+                  
+
                     
-                   {part.nodeType.includes('heading') &&  <Typography
+                   return           <div key={index}>
+                   {nodeType.includes('heading') && content[0].value && <Typography
                                 sx={{
                                 fontWeight: '600',
                                 py: '.5em',
@@ -101,25 +110,30 @@ const Index = ({data} : any) => {
                                     sm: '1.4em'
                                 }
                             }}>
-                                      {part.content[0].value}
+                                      {content[0].value}
                             </Typography>}
-                   {part.nodeType === 'paragraph' &&     
+                   {nodeType === 'paragraph' && content[0].value &&     
                        <Typography
-                   className={part.content[0].marks ? part.content[0].marks.map((a:any)=>a.type).join(' ') : ''}
+                   className={content[0].marks ? content[0].marks.map((a:any)=>a.type).join(' ') : ''}
                                 sx={{
                                 fontWeight: '400',
-                                py: part.content[0].marks.length > 0 ? '0em' :  '1em'    ,
+                                py: content[0].marks.length > 0 ? '0em' :  '1em'    ,
                                 fontSize: {
                                     xs: '1em',
                                     sm: '1.2em'
                                 }
                             }}>
-                                {`${part.content[0].value}`}
+                                {`${content[0].value}`}
                             </Typography>}
+
+                          
+                          
                         
 
-{part.content.map((cont:any)=>{
-if (cont.nodeType === 'hyperlink') {
+{content.map((cont:any)=>{
+    
+    if (cont.nodeType === 'hyperlink') {
+        console.log('cont: ', cont);
 return <Box
 sx={{
 margin: '1em auto',
@@ -142,8 +156,9 @@ position: "relative"
 
 })
 }
+</div> 
 
-</>   
+    
                               }  ) }
                         </Box>
 
@@ -152,21 +167,28 @@ position: "relative"
                     :
                     <Typography color='red' fontWeight='500' fontSize='1.2em'>Failed to load story</Typography>}
             </Box>
+          
+</>
+
         </Layout>
     )
 }
 export default Index
 
-export const getServerSideProps = async() => {
+export const getServerSideProps = async(ctx : any) => {
     try {
+       
+        let id = ctx.query.id ? ctx.query.id : ''
+        
         const data = await GetContentfullData(`
                         query  {
-                            storyCollection {
+                            storyCollection (where : {id_contains : "${id}"}) {
                               items {
                                 title
+                                id
                                 shortDescription
-                                postedAt
                                 bgImage
+                                timeRead
                                 section {
                                     json
                                 }

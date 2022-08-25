@@ -1,11 +1,13 @@
 import {Box, Button, Menu, MenuItem, Typography} from "@mui/material";
 import {useState} from "react";
 import {useRouter} from 'next/router';
-import Link from "next/link";
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
-function Dropdown({title, itemsArray} : {
+import { IItemsArray } from "../../Types/Types";
+
+function Dropdown({title,color, itemsArray} : {
     title: string,
-    itemsArray: any
+    itemsArray: IItemsArray[],
+    color ?: string
 }) {
 
     const [anchorEl,
@@ -23,7 +25,7 @@ function Dropdown({title, itemsArray} : {
             <Button
                 size='small'
                 sx={{
-                color: 'white'
+                color: color || 'white'
             }}
                 id="basic-button"
                 aria-controls={open
@@ -65,11 +67,7 @@ function Dropdown({title, itemsArray} : {
                 vertical: "bottom"
             }}>
 
-                {itemsArray && itemsArray.map((trip : {
-                    title: string,
-                    img: string,
-                    href: string
-                }) => {
+                {itemsArray && itemsArray.map((trip : IItemsArray) => {
                     return <MenuItem
                         key={trip.title}
                         sx={{

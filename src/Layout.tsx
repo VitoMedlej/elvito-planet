@@ -1,14 +1,15 @@
-import {Box} from "@mui/material";
+import {Box, Button, Drawer, IconButton} from "@mui/material";
 import Head from "next/head";
+import {useState} from "react";
 import {ILayout} from "../src/Types/Types";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
+import CloseIcon from '@mui/icons-material/Close';
+import DrawerMenuItems from "./Components/Menu/DrawerMenuItems";
 
-const Layout = ({title, children, desc} : ILayout) => {
-    // const [isOpen,     setOpen] = useState(false) const toggleDrawer = (state?:
-    // boolean) => {     setOpen(state !== undefined         ? state         :
-    // !isOpen) }
-
+const Layout = ({title, color, children, desc} : ILayout) => {
+    const [isOpen,
+        setOpen] = useState(false)
     return (
 
         <div>
@@ -44,7 +45,38 @@ const Layout = ({title, children, desc} : ILayout) => {
                     content="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"/>
 
             </Head>
-            <Navbar/> {/* <CustomDrawer isOpen={isOpen} toggleDrawer={toggleDrawer}/> */}
+            <Drawer
+                onClose={() => setOpen(false)}
+                sx={{
+                zIndex: "7777733"
+            }}
+                anchor={'right'}
+                open={isOpen}>
+                <Box
+                    sx={{
+                    width: '270px',
+                    padding: '1em 2em'
+                }}>
+                    <Box
+                        sx={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        flexDirection: 'column',
+                    }}>
+
+                        <IconButton onClick={() => setOpen(false)} size="large">
+                            <CloseIcon
+                                sx={{
+                                color: 'red'
+                            }}/>
+                        </IconButton>
+                    </Box>
+                    <DrawerMenuItems/>
+
+                </Box>
+            </Drawer>
+            <Navbar isOpen={isOpen} setOpen={setOpen} color={color}/>
             <> {children} </>
             <Footer/>
         </div>

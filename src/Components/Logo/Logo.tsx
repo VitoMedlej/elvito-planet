@@ -35,7 +35,7 @@ const Logo = ({toggleDrawer, colorMode, color} : any) => {
                 alt=""/> */}
             <CustomLink
                 fontSize='1.2em'
-                color={'white'}
+                color={'#0057d9'}
                 fontWeight='600'
                 text='Vito Medlej'
                 href='/'/>

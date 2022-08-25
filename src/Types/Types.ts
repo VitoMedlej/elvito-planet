@@ -1,7 +1,8 @@
 export interface ILayout {
     title : string
     children : JSX.Element
-    desc : string
+    desc : string;
+    color?: string
 }
 import {SvgIconTypeMap} from "@mui/material";
 import {OverridableComponent} from "@mui/material/OverridableComponent";
@@ -66,11 +67,29 @@ export interface IDrawerItem {
     url : string;
     toggleDrawer : (state?: boolean) => void
 }
-
+export interface IStory {
+    shortDescription : string;
+    title : string;
+    timeRead ?: string;
+    date : string;
+    section ?: any
+    bgImage : string
+    id ?: string
+    
+}
+export interface IItemsArray {
+    title: string,
+    href: string
+}
+export interface ILargeStoryCard {
+    sx?: any;
+    wfull?: boolean
+    story : IStory
+}
 export interface ISmallStoryCard {
     title : string;
     bgImage : string;
     shortDescription : string,
     date : string,
-    readTime : number | number
+    timeRead : number | string
 }

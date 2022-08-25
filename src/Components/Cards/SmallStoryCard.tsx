@@ -2,10 +2,10 @@ import React from 'react'
 import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
-import {ISmallStoryCard} from '../../Types/Types';
+import {IStory} from '../../Types/Types';
 import {useRouter} from 'next/router';
 
-const SmallStoryCard = ({title, shortDescription, date, bgImage, readTime} : ISmallStoryCard) => {
+const SmallStoryCard = ({title, shortDescription, date,id, bgImage, timeRead} : IStory) => {
     const slug = title
         .toLowerCase()
         .replace(/ /g, '-')
@@ -13,7 +13,7 @@ const SmallStoryCard = ({title, shortDescription, date, bgImage, readTime} : ISm
     const router = useRouter();
     return (
         <Box
-            onClick={() => router.push(`/story/${slug}`)}
+            onClick={() => router.push(`/story/${id}/${slug}`)}
             sx={{
             display: 'flex',
             my: '1em'
@@ -59,7 +59,7 @@ const SmallStoryCard = ({title, shortDescription, date, bgImage, readTime} : ISm
                     </Typography>
                 </Link>
 
-                <Typography fontWeight='400' fontSize='.85em' color='#505050'>{readTime}
+                <Typography fontWeight='400' fontSize='.85em' color='#505050'>{timeRead}
                     min read - {date}
                 </Typography>
                 <Typography

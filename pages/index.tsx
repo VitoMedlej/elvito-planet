@@ -1,8 +1,6 @@
 import type {NextPage}
 from 'next'
-import {Box, Container, Typography} from '@mui/material';
 import 'swiper/css';
-import Image from 'next/image'
 import StoriesExplore from '../src/Components/Sections/StoriesExplore/StoriesExplore';
 
 import Hero from '../src/Components/Sections/Hero/Hero';
@@ -10,12 +8,15 @@ import Trips from '../src/Components/Sections/Trips/Trips';
 import Explore from '../src/Components/Sections/Explore/Explore';
 import Subscribe from '../src/Components/Sections/Subscribe/Subscribe';
 import Layout from '../src/Layout';
+import { GetContentfullData } from '../src/Functions/GetContentfullData';
+import { IStory } from '../src/Types/Types';
 
-const Home : NextPage = () => {
+const Home : NextPage = ({data} : any) => {
+    let stories: IStory[] = data && data 
     return (
         <Layout title='' desc=''>
 <>
-     <Hero/> < Trips /> <Explore/> < StoriesExplore /> 
+     <Hero/> < Trips /> <Explore/> < StoriesExplore stories={stories} /> 
     <Subscribe />
 </>
   
@@ -24,3 +25,41 @@ const Home : NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps = async() => {
+    try {
+        const data = await GetContentfullData(`
+            query  {
+                storyCollection {
+                  items {
+                    id
+                    title
+                    shortDescription
+                    postedAt
+                    bgImage
+                    timeRead
+                  }
+                }
+              }
+            `)
+        if (!data || !data
+            ?.storyCollection
+                ?.items) 
+            throw 'Error no data'
+
+        return {
+            props: {
+                data: data.storyCollection.items
+            }
+        }
+
+    } catch (err) {
+        console.log('err: ', err);
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false
+            }
+        }
+    }
+}

@@ -1,13 +1,15 @@
 import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ILargeStoryCard } from '../../Types/Types';
 import {BackDrop} from '../Sections/Explore/Explore';
 
-interface ILargeStoryCard {
-    sx ?: any;
-    wfull ?: boolean
-}
-const LargeStoryCard = ({sx, wfull} : ILargeStoryCard) => {
+
+const LargeStoryCard = ({sx, wfull,story} : ILargeStoryCard) => {
+    const slug = story?.title
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/[^\w-]+/g, '');
     return (
         <Box
         className='relative'
@@ -30,7 +32,7 @@ const LargeStoryCard = ({sx, wfull} : ILargeStoryCard) => {
             <Image
                 className='img br2'
                 layout='fill'
-                src={`https://lp-cms-production.imgix.net/2022-08/africa-2BM779R-RFC.jpeg?auto=format&q=40&ar=16%3A9&fit=crop&w=1446`}/>
+                src={`${story.bgImage || 'https://lp-cms-production.imgix.net/2022-08/africa-2BM779R-RFC.jpeg?auto=format&q=40&ar=16%3A9&fit=crop&w=1446'}`}/>
             <BackDrop br={'1em'}/>
             <Box
                 sx={{
@@ -44,7 +46,7 @@ const LargeStoryCard = ({sx, wfull} : ILargeStoryCard) => {
                     sm: 'translateY(60%)'
                 }
             }}>
-                <Link href='/'>
+                <Link href={`/story/${story.id}/${slug}`}>
                     <Typography
                         className='cursor'
                         sx={{
@@ -58,11 +60,11 @@ const LargeStoryCard = ({sx, wfull} : ILargeStoryCard) => {
                     }}
                         fontWeight='600'
                         color='white'>
-                        Exploring Botswana on a budget is possible – here’s how to do it
+                       {story.title}
                     </Typography>
                 </Link>
                 <Typography fontSize='.8em' color='white' fontWeight='500'>
-                    Aug 14, 2022 • 7 min read
+                  {'aug 25, 2022'} • {story.timeRead} min read
                 </Typography>
                 <Typography
                     sx={{
@@ -78,8 +80,7 @@ const LargeStoryCard = ({sx, wfull} : ILargeStoryCard) => {
                 }}
                     color='white'
                     fontWeight='400'>
-                    From urban oases and subtropical sanctuaries to simply perfect stretches of
-                    sand, these are some of South Korea’s best beaches.
+                   {story.shortDescription}
                 </Typography>
             </Box>
         </Box>
