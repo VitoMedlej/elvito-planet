@@ -55,13 +55,15 @@ const Layout = ({title, color, children, desc} : ILayout) => {
                 <Box
                     sx={{
                     width: '270px',
-                    padding: '1em 2em'
+                    pt: '1em'
                 }}>
                     <Box
                         sx={{
                         width: '100%',
                         display: 'flex',
-                        justifyContent: 'flex-end',
+                        justifyContent: 'end',
+                        alignItems:'end',
+                        mr:'.25em',
                         flexDirection: 'column',
                     }}>
 
@@ -72,7 +74,7 @@ const Layout = ({title, color, children, desc} : ILayout) => {
                             }}/>
                         </IconButton>
                     </Box>
-                    <DrawerMenuItems/>
+                    <DrawerMenuItems setOpen={setOpen}/>
 
                 </Box>
             </Drawer>

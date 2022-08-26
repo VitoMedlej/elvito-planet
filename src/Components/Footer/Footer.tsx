@@ -17,7 +17,7 @@ function Copyright() {
             <Typography variant='h1' fontSize='1em'>
                 {'Copyright © '}
                 <Link color="inherit" href="/">
-                    elvito-portfolio.netlify.app
+                    elvito-planet.netlify.app
                 </Link>{' '} {new Date().getFullYear()}
                 {'.'}
             </Typography>
@@ -62,7 +62,7 @@ function Footer() {
 
                         <Box sx={styles}>
                             <Typography variant='h3' fontSize='1em'>
-                            elvito-trip is a travel guide aimed to to help more people from more backgrounds experience the joy of exploration. This website design was inspired by various travel website on the internet and I don&apos;t claim to own any of the content whatsoever.  
+                            elvito-planet is a travel guide aimed to to help more people from more backgrounds experience the joy of exploration. This website design was inspired by various travel website on the internet and I don&apos;t claim to own any of the content whatsoever.  
                             </Typography>
                         </Box>
 

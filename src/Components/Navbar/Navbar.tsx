@@ -9,9 +9,6 @@ import {
 } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-
-import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
-import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import Logo from '../Logo/Logo';
 import SearchInput from '../Inputs/SearchInput';
 import Dropdown from '../Menu/Dropdown';
@@ -59,7 +56,7 @@ const Navbar = ({setOpen,isOpen, color} : any) => {
             }}
                 maxWidth="lg">
                 <SearchInput/>
-                <Logo  colorMode={'colorMode'}/>
+                <Logo  color={color}/>
 
                 <IconButton
                 onClick={() =>setOpen(true)}
