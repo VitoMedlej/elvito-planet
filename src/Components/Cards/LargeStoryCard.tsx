@@ -30,6 +30,7 @@ const LargeStoryCard = ({sx, wfull,story} : ILargeStoryCard) => {
             ...sx
         }}>
             <Image
+                 alt=''
                 className='img br2'
                 layout='fill'
                 src={`${story.bgImage || 'https://lp-cms-production.imgix.net/2022-08/africa-2BM779R-RFC.jpeg?auto=format&q=40&ar=16%3A9&fit=crop&w=1446'}`}/>

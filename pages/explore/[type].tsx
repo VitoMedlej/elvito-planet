@@ -56,6 +56,7 @@ const Index = ({data} : any) => {
                         }
                     }}>
                         <Image
+                             alt=''
                             className='img'
                             layout='fill'
                             priority
@@ -74,6 +75,7 @@ const Index = ({data} : any) => {
                         }
                     }}>
                         <Image
+                             alt=''
                             className='img'
                             layout='fill'
                             priority

@@ -41,9 +41,11 @@ export default function DrawerMenuItems({setOpen} : any) {
            
                 </AccordionDetails>
             </Accordion>
+
+            
             <Link href='/#subscribe'>
                     <Button
-                    onClick={() =>isOpen(false)}
+                    onClick={() => setOpen(false)}
                         variant='contained'
                         sx={{
                         width: '100%',

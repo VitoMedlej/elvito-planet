@@ -20,6 +20,7 @@ const Subscribe = () => {
         alignItems: 'flex-end'
     }}>
         <Image
+             alt=''
             className='img z-4'
             src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1660673044/pexels-photo-2131856_bj9ofa.jpg`}
             layout='fill'/>

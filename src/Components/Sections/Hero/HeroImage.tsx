@@ -26,6 +26,7 @@ const HeroImage = ({img, full} : IHeroImage) => {
                 className='full'></Box>
 
             <Image
+                 alt=''
                 className='img'
                 layout='fill'
                 src={img || `https://lp-cms-production.imgix.net/2022-05/Croatia-Plitvice-Lakes-National_Park-Melinda-Nagy-shutterstock_256094920-RFC.jpg?auto=format&q=40&ar=16%3A9&fit=crop&w=1446`}/>

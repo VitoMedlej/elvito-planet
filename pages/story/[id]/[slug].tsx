@@ -66,6 +66,7 @@ const Index = ({data} : any) => {
                                 position: "relative"
                             }}>
                                 <Image
+                                     alt=''
                                     src={story.bgImage || 'https://lp-cms-production.imgix.net/2021-10/Arikok%20National%20Park%20jeep.jpg?auto=format&q=40&ar=16%3A9&fit=crop&w=5500'}
                                     layout='fill'
                                     className='img'/>
@@ -148,6 +149,7 @@ minHeight: '450px',
 position: "relative"
 }}>
 <Image
+     alt=''
     src={`${cont.data.uri}`}
     layout='fill'
     className='img'/>

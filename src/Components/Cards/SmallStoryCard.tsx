@@ -32,6 +32,7 @@ const SmallStoryCard = ({title, shortDescription, date,id, bgImage, timeRead} : 
                 }
             }}>
                 <Image
+                     alt=''
                     className="img br1"
                     layout='fill'
                     src={bgImage || 'https://res.cloudinary.com/dwcu3wcol/image/upload/v1660988199/pexels-photo-48639' +

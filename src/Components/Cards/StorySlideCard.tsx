@@ -27,6 +27,7 @@ const StorySlideCard = ({title,bgImage,shortDescription,date,timeRead,id}:IStory
                     mb: '1em'
                 }}>
                     <Image
+                         alt=''
                         className='img br1'
                         src={`${bgImage || 'https://lp-cms-production.imgix.net/2022-08/africa-2BM779R-RFC.jpeg?auto=format&q=40&ar=16%3A9&fit=crop&w=1446'}`}
                         layout='fill'/>

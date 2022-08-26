@@ -32,6 +32,7 @@ const Index = ({destinationData} : any) => {
                     }
                 }}>
                     <Image
+                    alt=''
                         className='img'
                         layout='fill'
                         priority
@@ -134,6 +135,7 @@ const Index = ({destinationData} : any) => {
                                 minHeight: '300px'
                             }}>
                                 <Image
+                                     alt=''
                                     layout='fill'
                                     className='img'
                                     src={data.images[0] || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20' +
@@ -147,6 +149,7 @@ const Index = ({destinationData} : any) => {
                                 minHeight: '300px'
                             }}>
                                 <Image
+                                     alt=''
                                     layout='fill'
                                     className='img'
                                     src={data.images[1] || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20' +
@@ -170,6 +173,7 @@ const Index = ({destinationData} : any) => {
                                 minHeight: '300px'
                             }}>
                                 <Image
+                                     alt=''
                                     layout='fill'
                                     className='img'
                                     src={data.images[2] || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20' +
@@ -183,6 +187,7 @@ const Index = ({destinationData} : any) => {
                                 minHeight: '300px'
                             }}>
                                 <Image
+                                     alt=''
                                     layout='fill'
                                     className='img'
                                     src={`${data

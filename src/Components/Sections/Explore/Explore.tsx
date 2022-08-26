@@ -89,6 +89,7 @@ const Explore = () => {
 
                 </Box>
                 <Image
+                     alt=''
                     layout='fill'
                     src={`https://lonelyplanetstatic.imgix.net/marketing/2022/homepage/bit_bg.jpg?fit=crop&q=72&auto=format&w=1247&h=929&dpr=1`}/>
                 <Box
@@ -103,6 +104,7 @@ const Explore = () => {
                 }}>
 
                     <Image
+                         alt=''
                         className='transparentimg'
                         layout='fill'
                         src={`https://lonelyplanetstatic.imgix.net/marketing/2022/homepage/bit_travelers.png?fit=crop&q=50&auto=format&w=328&h=379&dpr=2`}/>
