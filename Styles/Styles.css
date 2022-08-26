@@ -1,9 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif !important;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .full {
@@ -12,8 +11,7 @@ body {
 }
 
 .logo {
-  -webkit-filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
-          filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
+  filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
 }
 
 .img {
@@ -27,10 +25,8 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
 }
-
 .swiper-button-next:after,
 .swiper-button-prev:after {
   color: gray !important;
@@ -61,10 +57,17 @@ body {
      object-fit: cover;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 500;
+}
+
 .slide {
   height: 390px !important;
 }
-
 .slide a {
   margin: 0.5em;
   color: black;
@@ -91,15 +94,17 @@ body {
      object-fit: cover !important;
 }
 
+.MuiBackdrop-root .MuiBackdrop-invisible .css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop {
+  z-index: 9999999;
+}
+
 @media (min-width: 900px) {
   .slide {
     height: 450px !important;
   }
 }
-
 @media (min-width: 600px) {
   .br2 {
     border-radius: 1em;
   }
-}
-/*# sourceMappingURL=Styles.css.map */
+}/*# sourceMappingURL=Styles.css.map */

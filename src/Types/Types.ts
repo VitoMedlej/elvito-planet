@@ -1,7 +1,8 @@
 export interface ILayout {
     title : string
     children : JSX.Element
-    desc : string
+    desc : string;
+    color?: string
 }
 import {SvgIconTypeMap} from "@mui/material";
 import {OverridableComponent} from "@mui/material/OverridableComponent";
@@ -20,13 +21,13 @@ export interface INavbar {
 }
 export interface IHeroImage {
     img : string;
-    full ?: boolean;
+    full?: boolean;
 }
 export interface ITripsCarousel {
     arr : {
 
-        img : string;
-        href : string;
+        img: string;
+        href: string;
         title: string;
     }[]
 }
@@ -49,7 +50,7 @@ export interface ICustomDrawer extends INavbar {
 export interface IToolCard {
     title : string;
     svg : string;
-    className ?: string;
+    className?: string;
     filter?: boolean
 }
 export interface ISocialMedia extends IToolCard {
@@ -66,4 +67,29 @@ export interface IDrawerItem {
     url : string;
     toggleDrawer : (state?: boolean) => void
 }
-
+export interface IStory {
+    shortDescription : string;
+    title : string;
+    timeRead ?: string;
+    date : string;
+    section ?: any
+    bgImage : string
+    id ?: string
+    
+}
+export interface IItemsArray {
+    title: string,
+    href: string
+}
+export interface ILargeStoryCard {
+    sx?: any;
+    wfull?: boolean
+    story : IStory
+}
+export interface ISmallStoryCard {
+    title : string;
+    bgImage : string;
+    shortDescription : string,
+    date : string,
+    timeRead : number | string
+}

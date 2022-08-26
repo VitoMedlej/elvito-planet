@@ -1,8 +1,13 @@
 import {Box, Typography} from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
+import { IStory } from '../../Types/Types';
 
-const StorySlideCard = () => {
+const StorySlideCard = ({title,bgImage,shortDescription,date,timeRead,id}:IStory) => {
+    const slug = title
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/[^\w-]+/g, '');
     return (
         <Box sx={{
             maxWidth:'350px',
@@ -23,19 +28,19 @@ const StorySlideCard = () => {
                 }}>
                     <Image
                         className='img br1'
-                        src={`https://lp-cms-production.imgix.net/2022-08/africa-2BM779R-RFC.jpeg?auto=format&q=40&ar=16%3A9&fit=crop&w=1446`}
+                        src={`${bgImage || 'https://lp-cms-production.imgix.net/2022-08/africa-2BM779R-RFC.jpeg?auto=format&q=40&ar=16%3A9&fit=crop&w=1446'}`}
                         layout='fill'/>
                 </Box>
                 <Box>
 
-                    <Link href='/'>
+                    <Link href={`/story/${id}/${slug}`}>
                         <Typography fontSize="1.35em" fontWeight="600">
-                            fat title foo farw safwe ff
+                          {title}
                         </Typography>
 
                     </Link>
                     <Typography fontSize='.8em' fontWeight='500'>
-                        Aug 14, 2022 • 7 min read
+                        {date} • {timeRead} min read
                     </Typography>
                     <Typography
                         sx={{
@@ -50,8 +55,7 @@ const StorySlideCard = () => {
                         }
                     }}
                         fontWeight='400'>
-                        From urban oases and subtropical sanctuaries to simply perfect stretches of
-                        sand, these are some of South Korea’s best beaches.
+                    {shortDescription}
                     </Typography>
                 </Box>
 

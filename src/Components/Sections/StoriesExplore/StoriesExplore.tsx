@@ -1,10 +1,11 @@
 import {Container, Grid, Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ISmallStoryCard, IStory } from '../../../Types/Types';
 import LargeStoryCard from '../../Cards/LargeStoryCard';
 import StorySlider from './StorySlider';
 
-const StoriesExplore = () => {
+const StoriesExplore = ({stories}:{stories:IStory[]}) => {
     return (
         <Box
         className='relative'
@@ -25,7 +26,7 @@ const StoriesExplore = () => {
                     fontSize: {
                         xs: '1.1em'
                     }
-                }}>Plan your trip</Typography>
+                }}>Read Latest Stories</Typography>
                 <Typography
                     sx={{
                     color: 'black',
@@ -36,7 +37,7 @@ const StoriesExplore = () => {
                         sm: '2em',
                         md: '2.4em'
                     }
-                }}>Where to next?</Typography>
+                }}>Our Best Articles</Typography>
 
             </Container>
             <Container
@@ -50,10 +51,12 @@ const StoriesExplore = () => {
                 <Grid container>
                     <Grid item xs={12} lg={8}>
 
-                        <LargeStoryCard/>
+                        <LargeStoryCard story={stories[0]}/>
                     </Grid>
                     <Grid  item xs={12} lg={4}>
-                        <StorySlider/>
+                     
+<StorySlider stories={stories}/>
+                   
                     </Grid>
                 </Grid>
             </Container>

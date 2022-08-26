@@ -11,6 +11,7 @@ const HeroImage = ({img, full} : IHeroImage) => {
                 ? '100%'
                 : '33.33333%',
             height: '100%',
+            minHeight:{md:'650px'},
             pointerEvents:'none',
   
         }}>
