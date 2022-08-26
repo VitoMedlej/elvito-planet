@@ -75,9 +75,9 @@ function Footer() {
                             className='FooterLink'
                             href='/'
                             >Home</Link>
-                            <Link href='/contact'>Contact</Link>
+                            <Link href='/explore/destinations'>Destinations</Link>
                          
-                            <Link href='/contact'>Contact</Link>
+                            <Link href='/explore/stories'>Stories</Link>
                         </Box>
 
                     </Grid>

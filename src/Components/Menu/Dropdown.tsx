@@ -82,7 +82,7 @@ function Dropdown({title,color, itemsArray} : {
                     }}
                         onClick={() => {
                         setAnchorEl(null);
-                        router.push('/')
+                        router.push(trip.href || '/')
                     }}>{trip.title}</MenuItem>
                 })}
 

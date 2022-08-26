@@ -32,7 +32,7 @@ const Subscribe = () => {
             zIndex: '22421',
             py: '3.5em',
             transform: 'translateY(2em)',
-            px: '4em',
+            px: {xs:'1.5em',sm:'2.5em',md:'4em'},
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
             width: '80%',
             background: 'white',
