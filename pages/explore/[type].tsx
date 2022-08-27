@@ -34,7 +34,7 @@ const Index = ({data} : any) => {
     return (
         <Layout
             title={`Explore and see ${type} from all over the world | Elvito Planet `}
-            desc=''>
+            desc={`Discover amazing travel experiences with Lonely Planet’s insider tips, inspirational traveler stories and expert guidance from around the world.`}>
             <div>
 
                 <Box
