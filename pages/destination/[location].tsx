@@ -34,7 +34,7 @@ const Index = ({destinationData} : any) => {
                     <Image
                         className='img'
                         layout='fill'
-                        priority
+                        
                         src={` ${data.bgImage || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20' +
                         '_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}`}/>
                 </Box>
