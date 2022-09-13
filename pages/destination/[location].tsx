@@ -12,6 +12,7 @@ const Index = ({destinationData} : any) => {
         ?.destinationCollection
 
     let data = items[0]
+    console.log(data?.bgImg)
 
     return (
         <Layout
