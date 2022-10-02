@@ -12,6 +12,7 @@ const Index = ({destinationData} : any) => {
         ?.destinationCollection
 
     let data = items[0]
+    
 
     return (
         <Layout
@@ -28,10 +29,10 @@ const Index = ({destinationData} : any) => {
                         sm: '400px'
                     }
                 }}>
-                    <Image
+                    <img
                         alt=''
-                        className='img'
-                        layout='fill'
+                        className='img abso'
+                        // layout='fill'
                         src={` ${data.bgImage || 'https://lp-cms-production.imgix.net/2021-10/people-in-a-glass-garden-exhibit_t20_3wP4xB.jpg?fit=crop&q=60&auto=format&w=1247&h=538&dpr=1'}`}/>
                 </Box>
                 <Box

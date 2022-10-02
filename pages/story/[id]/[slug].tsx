@@ -1,7 +1,5 @@
 import {Box, Breadcrumbs, Container, Link, Typography} from "@mui/material"
-import {useRouter} from "next/router"
 import Layout from "../../../src/Layout"
-import Image from 'next/image'
 import {GetContentfullData} from "../../../src/Functions/GetContentfullData"
 import StoriesExplore from "../../../src/Components/Sections/StoriesExplore/StoriesExplore";
 import ProgressBar from 'react-progressbar-on-scroll';
@@ -65,11 +63,11 @@ const Index = ({data} : any) => {
                                 minHeight: '450px',
                                 position: "relative"
                             }}>
-                                <Image
+                                <img
                                      alt=''
                                     src={story.bgImage || 'https://lp-cms-production.imgix.net/2021-10/Arikok%20National%20Park%20jeep.jpg?auto=format&q=40&ar=16%3A9&fit=crop&w=5500'}
-                                    layout='fill'
-                                    className='img'/>
+                                    // layout='fill'
+                                    className='img abso'/>
                             </Box>
                         </Box>
                         <Box
@@ -134,7 +132,6 @@ const Index = ({data} : any) => {
 {content.map((cont:any)=>{
     
     if (cont.nodeType === 'hyperlink') {
-        console.log('cont: ', cont);
 return <Box
 sx={{
 margin: '1em auto',
@@ -148,11 +145,11 @@ maxWidth: '1200px',
 minHeight: '450px',
 position: "relative"
 }}>
-<Image
-     alt=''
+<img
+     alt='Blog image'
     src={`${cont.data.uri}`}
-    layout='fill'
-    className='img'/>
+    // layout='fill'
+    className='img abso'/>
 </Box>
 } 
 

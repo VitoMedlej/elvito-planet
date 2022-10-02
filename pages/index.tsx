@@ -14,7 +14,7 @@ import { IStory } from '../src/Types/Types';
 const Home : NextPage = ({data} : any) => {
     let stories: IStory[] = data && data 
     return (
-        <Layout title='' desc=''>
+        <Layout title='Elvito Planet | Best Travel Guide' desc='Discover amazing travel experiences with ElVito Planet’s insider tips, inspirational traveler stories and expert guidance from around the world.'>
 <>
      <Hero/> < Trips /> <Explore/> < StoriesExplore stories={stories} /> 
     <Subscribe />
